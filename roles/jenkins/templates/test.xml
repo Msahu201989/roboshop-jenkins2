@@ -9,24 +9,28 @@
             <options/>
         </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
     </actions>
-    <description></description>
+    <description>pipeline script</description>
     <keepDependencies>false</keepDependencies>
     <properties/>
-    <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps">
-        <script>pipeline {
-            agent any
-            environment {
-            NEWRELIC_API_KEY = credentials(&apos;ansible1&apos;)
-            }
-            stages {
-            stage(&apos;Foo&apos;) {
-            steps {
-            echo &apos;Hello world&apos;
-            }
-            }
-            }
-            }</script>
-        <sandbox>true</sandbox>
+    <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps">
+        <scm class="hudson.plugins.git.GitSCM" plugin="git">
+            <configVersion>2</configVersion>
+            <userRemoteConfigs>
+                <hudson.plugins.git.UserRemoteConfig>
+                    <url>https://github.com/Msahu201989/learning-jenkins.git</url>
+                </hudson.plugins.git.UserRemoteConfig>
+            </userRemoteConfigs>
+            <branches>
+                <hudson.plugins.git.BranchSpec>
+                    <name>*/main</name>
+                </hudson.plugins.git.BranchSpec>
+            </branches>
+            <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+            <submoduleCfg class="empty-list"/>
+            <extensions/>
+        </scm>
+        <scriptPath>Jenkinsfile</scriptPath>
+        <lightweight>true</lightweight>
     </definition>
     <triggers/>
     <disabled>false</disabled>
