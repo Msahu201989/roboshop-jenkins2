@@ -6,20 +6,20 @@
     password: admin123
     url: http://172.31.89.116:8080
     user: admin
-#  loop:
-#    - { name: "ci-pipelines"}
+  loop:
+    - { name: "ci-pipelines"}
 #    - { name: "terraform"}
-#
-#- name: Include Multi Branch task file
-#  ansible.builtin.include_tasks: mbranch.yml
-#  loop:
-#    - { name: "cart"}
+
+- name: Include Multi Branch task file
+  ansible.builtin.include_tasks: mbranch.yml
+  loop:
+    - { name: "cart"}
 #    - { name: "catalogue"}
 #    - { name: "user"}
 #    - { name: "shipping"}
 #    - { name: "payment"}
 #    - { name: "frontend"}
-#
+
 #- name: Include Single Branch task file
 #  ansible.builtin.include_tasks: sbranch.yml
 #  loop:
