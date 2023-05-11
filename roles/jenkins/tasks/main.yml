@@ -17,7 +17,7 @@
     user: admin
   loop:
     - { name: "cart"}
-    - { name: "Catalogue"}
+
 
 
 #  loop:
