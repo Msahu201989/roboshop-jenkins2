@@ -13,7 +13,6 @@
   loop:
     - { name: "cart"}
 
-
 #  loop:
 #    - { name: "ci-pipelines"}
 ##    - { name: "terraform"}
